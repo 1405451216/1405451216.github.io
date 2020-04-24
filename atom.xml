@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-24T03:41:19.295Z</updated>
+  <updated>2020-04-24T05:31:11.665Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,80 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟机安装redis</title>
+    <link href="http://yoursite.com/2020/04/24/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85redis/"/>
+    <id>http://yoursite.com/2020/04/24/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85redis/</id>
+    <published>2020-04-24T05:24:24.023Z</published>
+    <updated>2020-04-24T05:31:11.665Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="docker安装redis教程"><a href="#docker安装redis教程" class="headerlink" title="docker安装redis教程"></a>docker安装redis教程</h2><p>第一步：下载redis</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure><p>第二步： 创建配置文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &#x2F;mydata&#x2F;redis&#x2F;conf</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch &#x2F;mydata&#x2F;redis&#x2F;conf&#x2F;redis.conf</span><br></pre></td></tr></table></figure><p>第三步： 启动容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6379:6379 --name redis \</span><br><span class="line">-v &#x2F;mydata&#x2F;redis&#x2F;data:&#x2F;data \</span><br><span class="line">-v &#x2F;mydata&#x2F;redis&#x2F;conf&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf \</span><br><span class="line">-d redis redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf</span><br></pre></td></tr></table></figure><p>第四步：运行redis</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it redis redis-cli</span><br></pre></td></tr></table></figure><p>第五步：exit退出redis开启aof持久化</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it redis redis-cli</span><br></pre></td></tr></table></figure><p>第六步：重启redis</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart redis</span><br></pre></td></tr></table></figure><p>这样redis就安装成功了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;docker安装redis教程&quot;&gt;&lt;a href=&quot;#docker安装redis教程&quot; class=&quot;headerlink&quot; title=&quot;docker安装redis教程&quot;&gt;&lt;/a&gt;docker安装redis教程&lt;/h2&gt;&lt;p&gt;第一步：下载redis&lt;/p&gt;
+&lt;f
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>docker安装MySQL</title>
+    <link href="http://yoursite.com/2020/04/24/docker%E5%AE%89%E8%A3%85MySQL/"/>
+    <id>http://yoursite.com/2020/04/24/docker%E5%AE%89%E8%A3%85MySQL/</id>
+    <published>2020-04-24T05:12:31.209Z</published>
+    <updated>2020-04-24T05:23:52.492Z</updated>
+    
+    <content type="html"><![CDATA[<p>docker安装MySQL的配置及安装过程</p><p>第一步：下载镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:5.7</span><br></pre></td></tr></table></figure><p>第二步： 启动容器</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql \</span><br><span class="line">-v &#x2F;mydata&#x2F;mysql&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql \</span><br><span class="line">-v &#x2F;mydata&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql \</span><br><span class="line">-v &#x2F;mydata&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD&#x3D;root \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure><p>第三步：修改配置文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;mydata&#x2F;mysql&#x2F;conf&#x2F;my.cnf</span><br></pre></td></tr></table></figure><p>按键盘上的i键进入输入模式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">init_connect&#x3D;&#39;SET collation_connection &#x3D; utf8_unicode_ci&#39;</span><br><span class="line">init_connect&#x3D;&#39;SET NAMES utf8&#39;</span><br><span class="line">character-set-server&#x3D;utf8</span><br><span class="line">collation-server&#x3D;utf8_unicode_ci</span><br><span class="line">skip-character-set-client-handshake</span><br><span class="line">skip-name-resolve</span><br></pre></td></tr></table></figure><p>第四步：重启MySQL</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart mysql</span><br></pre></td></tr></table></figure><p>查看有没有修改成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;etc&#x2F;mysql&#x2F;my.cnf</span><br></pre></td></tr></table></figure><p>这样我们就安装成功了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;docker安装MySQL的配置及安装过程&lt;/p&gt;
+&lt;p&gt;第一步：下载镜像&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机安装docker</title>
+    <link href="http://yoursite.com/2020/04/24/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85docker/"/>
+    <id>http://yoursite.com/2020/04/24/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85docker/</id>
+    <published>2020-04-24T04:59:02.731Z</published>
+    <updated>2020-04-24T05:15:38.102Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Centos7安装虚拟机教程</p><p>建议先进入root用户由最高的权限</p><p>su -i   </p><p>输入密码就行</p><p>首先执行下面代码删除以前的docker</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br></pre></td></tr></table></figure><p>在新主机上首次安装Docker Engine之前，需要设置Docker存储库。之后，您可以从存储库安装和更新Docker。</p><p>安装<code>yum-utils</code>软件包（提供<code>yum-config-manager</code> 实用程序）并设置稳定的存储库。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure><p>安装docker</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure><p>启动docker</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure><p>可以通过命令查看docker版本</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure><p>配置一下docker的镜像加速否则下载慢</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">第一步：  sudo mkdir -p &#x2F;etc&#x2F;docker</span><br><span class="line">第二步：  sudo tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;8hhzjd94.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">第三步：sudo systemctl daemon-reload</span><br><span class="line">第四步：sudo systemctl restart docker</span><br></pre></td></tr></table></figure><p>最后设置docker开机自启</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure><p>然后docker就安装完成啦</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Centos7安装虚拟机教程&lt;/p&gt;
+&lt;p&gt;建议先进入root用户由最高的权限&lt;/p&gt;
+&lt;p&gt;su -i   &lt;/p&gt;
+&lt;p&gt;输入密码就行&lt;/p&gt;
+&lt;p&gt;首先执行下面代码删除以前的docker&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;ta
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>安装linux虚拟机</title>

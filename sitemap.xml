@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/24/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85redis/</loc>
+    
+    <lastmod>2020-04-24T05:31:11.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/24/docker%E5%AE%89%E8%A3%85MySQL/</loc>
+    
+    <lastmod>2020-04-24T05:23:52.492Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/24/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85docker/</loc>
+    
+    <lastmod>2020-04-24T05:15:38.102Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/23/%E5%AE%89%E8%A3%85linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     
     <lastmod>2020-04-24T03:41:19.295Z</lastmod>
