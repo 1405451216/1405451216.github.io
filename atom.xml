@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-04-24T03:41:19.295Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装linux虚拟机</title>
+    <link href="http://yoursite.com/2020/04/23/%E5%AE%89%E8%A3%85linux%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>http://yoursite.com/2020/04/23/%E5%AE%89%E8%A3%85linux%E8%99%9A%E6%8B%9F%E6%9C%BA/</id>
+    <published>2020-04-23T13:48:30.169Z</published>
+    <updated>2020-04-24T03:41:19.295Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><strong><em>下面教大家安装Linux虚拟机</em></strong></li></ul><p><strong><em>第一步：</em></strong></p><p>去下面地址下载虚拟机</p><p><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a></p><p><img src="" class="lazyload" data-src="https://ginboke.oss-cn-beijing.aliyuncs.com/%24NRW%7D%5D%7ESJ%40C%24%5D3SIT39UWY4.png"  alt=""></p><p>下载完了无脑下一步安装就行（记得改一下安装位置）</p><p><strong><em>第二部安装vagrant</em></strong></p><p><a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">https://www.vagrantup.com/downloads.html</a></p><p><img src="" class="lazyload" data-src="https://ginboke.oss-cn-beijing.aliyuncs.com/HQ%7D%5DIQR5%40N7F%28_4%29%25%28K6ME7.png"  alt=""></p><p>然后无脑安装（记得该位置）</p><p><strong><em>第三步：</em></strong></p><p>打开win+r  输入cmd进入命令行</p><p>输入：vagrant init centos/7 等待成功 然后进入c盘你自己的用户页面会发现</p><p><img src="" class="lazyload" data-src="https://ginboke.oss-cn-beijing.aliyuncs.com/OAJQK180T%5B%7DDPB%7D%5DGGOTNIO.png"  alt="img"></p><p>继续在命令行输入vagrant up 安装镜像可能有点慢哦</p><p>安装完成可以输入vagrant  ssh进入虚拟机</p><p>第四步：虚拟机网络设置</p><p>首先要查看自己电脑的IP进入进入命令行输入ipconfig</p><p><img src="" class="lazyload" data-src="https://ginboke.oss-cn-beijing.aliyuncs.com/19%7D3%25%5B5PH8Z%25G6FXLADI6%7EH.png"  alt="img"></p><p>记住这个ip</p><p>进入c盘进入用户页面用记事本打开Vagrantfile设置IP地址</p><p><img src="" class="lazyload" data-src="https://ginboke.oss-cn-beijing.aliyuncs.com/J%7B_0AC5E%5B2S09UF4Q2Z%25%5BGI.png"  alt="img"></p><p>找到这句话IP改成刚才看到一样的 前边应该有一个#把他删除了不然不生效</p><p>设置完成之后可以进命令行vagrant reload重启vagrant</p><p>这样我们就在Windows上有自己的虚拟机啦</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;下面教大家安装Linux虚拟机&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;第一步：&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;去下面地址下载虚拟机&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ww
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
